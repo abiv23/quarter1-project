@@ -1,0 +1,195 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+============================================
+              Reset Overrides
+
+============================================
+*/
+
+ /*img {
+   height: 100%;
+   width: 100%;
+ }*/
+
+/*
+============================================
+              Nav
+
+============================================
+*/
+
+@font-face {
+	font-family: 'Conv_UNIVERSAL-COLLEGE';
+	src: url('fonts/UNIVERSAL-COLLEGE.eot');
+	src: local('☺'), url('fonts/UNIVERSAL-COLLEGE.woff') format('woff'), url('fonts/UNIVERSAL-COLLEGE.ttf') format('truetype'), url('fonts/UNIVERSAL-COLLEGE.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.nav {
+  display: flex;
+  height: 40vh;
+  width: auto;
+  background-color: #002D55;
+}
+
+
+.nav a {
+  display: flex;
+  align-items: center;;
+  justify-content: flex-start;
+}
+
+.hero-image {
+  padding: 1em 0 1em 0;
+  border-radius: 10%;
+  border: 1px solid #F0EBD2;
+  margin: 1em 0;
+}
+
+.logo-text {
+  font-size: 2em;
+  color: #B38707;
+  text-shadow: .1em .1em black;
+  font-family: 'Conv_UNIVERSAL-COLLEGE';
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;;
+  justify-content: flex-end;
+}
+
+.nav ul li {
+  padding: 1em 2em 1em 2em;
+  border: 1px solid #F0EBD2;
+  margin: 0 .5em;
+  box-shadow: 5px 4px 3px black;
+  color: #F0EBD2;
+  border-radius: 15%;
+}
+
+.nav ul li a {
+  color: #B38707
+}
+
+/*
+============================================
+              Footer
+
+============================================
+*/
+
+.footer {
+  display: flex;
+  margin-bottom: 0;
+  width: auto;
+  background-color: #002D55;
+}
+
+.footer-link {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.copyright p {
+  color: #F0EBD2;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/*
+============================================
+              Home
+
+============================================
+*/
+
+main {
+  height: 100%;
+  width: auto;
+  background-color: #F0EBD2;
+}
+
+form {
+  display: flex;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10vh 0 0 0;
+}
+
+.hero-label {
+  display: flex;
+  align-self: center;
+  font-size: 2em;
+  padding: 1em 0;
+  color: #B38707;
+}
+
+.hero-input {
+  margin: 0 10vw;
+  font-size: 2em;
+}
+
+/*.input-label {
+  display: flex;
+  align-self: center;
+}*/
+
+.submit {
+  display: flex;
+  align-self: flex-start;
+  width: 8vw;
+  margin: 1em 1em 25vh 8em;
+}

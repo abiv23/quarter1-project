@@ -2,7 +2,8 @@
 ## Project Description
 * If you can't beat em, pretend to have moral superiority with 'Moral Scoreboard'
 
-* 'Moral Scoreboard' is a simple web app that searches and returns all arrests for the time period and team specified, allowing you to effectively discount any teams achievements.
+* 'Moral Scoreboard' is a simple web app that searches and returns all arrests for the time period and team specified,
+allowing you to effectively discount any teams achievements.
 
 * ex.
 fan of talented team: "The Patriots are the best team in the past two decades"
@@ -18,14 +19,14 @@ fan of talented team: "The Patriots are the best team in the past two decades"
 * As a user of Moral Scoreboard, I need a user input area that takes favorite team input (in the form of abbreviation, city, or team name the placeholder text will reflect these options) and uses an api call to find the team abbreviation key (ex GET url http://nflarrest.com/api/v1/team/search/?term=seahawks)s
 
 # User Story3 (Input area for user to interact with NFL Arrest API)
-* As a user of Moral Scoreboard, I need to have a user input area which accepts team name in order to receive the players rapsheets from that team (ex GET url http://nflarrest.com/api/v1/team/arrests/cle)
+* As a user of Moral Scoreboard, I need to display the search results for the first team listed team name in order to receive the players rapsheets from that team (ex GET url http://nflarrest.com/api/v1/team/arrests/cle)
 
-# User Story4 (API returned info displayed dynamically)
+# POTENTIALLY MAKE STRETCH User Story4 (API returned info displayed dynamically)
 * As a user of Moral Scoreboard, I need the info returned from the NFL Arrests API to display it's returned data in an easy to read format in order to quickly ascertain what info i'm interested in
 
 ## stretch functionality
 
-# User Story5 (Sorting against favorite team to surface where the other team commits more crimes than you)
+# PUSH TO NON STRETCH (Sorting against favorite team to surface where the other team commits more crimes than you)
 * As a user of Moral Scoreboard I would like to see a breakdown of crime where my rival team has more infractions than my team
 
 # User Story6 (Sorting data returned to surface the most egregious crimes first)
