@@ -8,11 +8,6 @@ body {
    flex: 1 0 auto;
  }
 
-.background-image img {
-  background-image: url('/assets/images/blowout2.jpg');
-  opacity: .3;
-}
-
 nav {
   background-color: #43a047;
 }
@@ -39,6 +34,11 @@ img {
   opacity: .75;
 }
 
+.player_name p {
+  min-height: 20vh;
+  width: auto;
+  flex-wrap: nowrap;
+}
 
 
 /*input .submit {

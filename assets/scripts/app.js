@@ -7,7 +7,6 @@ $(document).ready(function() {
     });
   })
 
-
 function UseLookUp(data){
   var codeLookUp = data[0].team_code;
   $.get("http://nflarrest.com/api/v1/team/arrests/" + codeLookUp, displayPlayers)
@@ -17,13 +16,13 @@ function UseLookUp(data){
 function displayPlayers(data){
   var playerText = $('.outputPlayer')
   var Team = $('.teamText1')
-  Team.append('<div class="row"><div class="col m3"></div><div class="col m6"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title">' + $('.team').val() + '<span>');
+  Team.append('<div class="row"><div class="col m6"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title"><span>');
   playerText.append('<div class="col m4"></div><h5 class="col m5">Player Arrest Details:</h5></div>');
   for (var i = 0; i < data.length; i++){
-    var Name = ('<div class="col m5"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title">' + data[i].Name + '</span><p class="player_name">Date: ' + data[i].Date + '</p><p>Charge: ' + data[i].Category + '</p><p>Details: ' + data[i].Description + '</p></div></div></div></div>')
-    var Category = ('<p>' + data[i].Category + '</p>')
-    var Description = ('<p>' + data[i].Description + '</p></div></div></div>')
-    var Year = ('<p class="player_name">' + data[i].Date + '</p>')
+    // var Name = ('<div class="col m3"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title">' + data[i].Name + '</span><p class="player_name">Date: ' + data[i].Date + '</p><p>Charge: ' + data[i].Category + '</p><p>Details: ' + data[i].Description + '</p></div></div></div></div>')
+    // var Category = ('<p>' + data[i].Category + '</p>')
+    // var Description = ('<p>' + data[i].Description + '</p></div></div></div>')
+    // var Year = ('<p class="player_name">' + data[i].Date + '</p>')
     playerText.append(Name);
   }
   $('.hero-label').text('Compare to your Team');
@@ -32,8 +31,8 @@ function displayPlayers(data){
 }
 
 function displayTeam(data){
-
   for (var i=0; i < data.length; i++){
+    var Category = ('')
   }
 }
 
