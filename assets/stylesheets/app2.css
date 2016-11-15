@@ -1,0 +1,46 @@
+body {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+ }
+
+ main {
+   flex: 1 0 auto;
+ }
+
+.background-image img {
+  background-image: url('/assets/images/blowout2.jpg');
+  opacity: .3;
+}
+
+nav {
+  background-color: #43a047;
+}
+
+footer.page-footer {
+  background-color: #43a047;
+}
+
+.footer-copyright div {
+  background-color: #43a047;
+}
+
+h1 {
+  color: #B38707;
+}
+
+h5 {
+  color: #B38707;
+}
+
+img {
+  height: auto;
+  width: auto;
+  opacity: .75;
+}
+
+
+
+/*input .submit {
+  padding: 1vh 0 0 0;
+}*/

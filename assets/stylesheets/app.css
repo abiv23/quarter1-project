@@ -109,16 +109,20 @@ table {
 }
 
 .nav ul li {
-  padding: 1em 2em 1em 2em;
+  padding: 1em 1.5em 1em 1.5em;
   border: 1px solid #F0EBD2;
   margin: 0 .5em;
   box-shadow: 5px 4px 3px black;
-  color: #F0EBD2;
   border-radius: 15%;
+	font-size: 1em;
 }
 
 .nav ul li a {
   color: #B38707
+}
+
+.nav ul li a:hover {
+	text-decoration: none;
 }
 
 /*
@@ -132,7 +136,9 @@ table {
   display: flex;
   margin-bottom: 0;
   width: auto;
+	height: 3vh;
   background-color: #002D55;
+	padding-top: .2em;
 }
 
 .footer-link {
@@ -192,4 +198,16 @@ form {
   align-self: flex-start;
   width: 8vw;
   margin: 1em 1em 25vh 8em;
+	background-color: #002D55;
+	color: #B38707;
+	padding: .25em 0 .25em 1.5em;
+	border: 1px solid #B38707;
+}
+
+.submit:hover {
+	background-color: grey;
+}
+
+.player_name {
+	font-family:
 }
