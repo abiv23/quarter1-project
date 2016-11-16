@@ -22,14 +22,15 @@ function useLookUp(data) {
 
 function displayPlayers(data) {
     var playerText = $('.outputPlayer')
-    playerText.append('<div class="col m4"></div><h5 class="col m5">Player Arrest Details: </h5></div>');
+    playerText.append('<div class="col m4"></div><h5 id="playerdata" class="col m5">Player Arrest Details: </h5></div>');
+    $('.playerLink').append('<h6 class="center"><a href="#playerdata">See Player Data</a></h6>')
     for (var i = 0; i < data.length; i++) {
         var Name = ('<div class="col m5"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title">' + data[i].Name + '</span><p class="player_name">Date: ' + data[i].Date + '</p><p>Charge: ' + data[i].Category + '</p><p class="truncate details details' + [i] + '">Details: ' + data[i].Description + '</p></div></div></div></div>')
         playerText.append(Name);
         $('.details' + [i]).on('click', removeTruncate)
     }
     $('.hero-label').text('Compare Teams');
-    $('.team').attr("placeholder", "Enter your Favorite Team to see the Moral Scoreboard");
+    $('.team').attr("placeholder", "Next enter your Favorite Team");
 }
 
 function removeTruncate() {
@@ -80,3 +81,7 @@ function displayTeam2(data) {
     $('.hero-label').text('The Moral Scoreboard');
     $('.team').hide();
 }
+
+// $(.scoreboard1)
+//
+// $(.scoreboard2)
