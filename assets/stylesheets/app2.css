@@ -33,14 +33,10 @@ h5 {
   color: #B38707;
 }
 
-img {
-  height: auto;
-  width: auto;
-  opacity: .75;
+.scoreBoard {
+  width: 33%;
 }
 
-
-
-/*input .submit {
-  padding: 1vh 0 0 0;
-}*/
+.teamText1 {
+  height: 1vh;
+}

@@ -3,19 +3,16 @@
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="assets/stylesheets/app2.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/scripts/app.js"></script>
 </head>
-<!-- Materialize -->
 <body>
     <header>
       <div class="navbar">
         <nav>
             <div class="nav-wrapper">
             <a href="#" class="brand-logo">The Moral Scoreboard</a>
-            <!-- <img src="assets/images/blowout-bad-sportsmanship.jpg" class="col-md-6 hero-image"> -->
             <ul class="right hide-on-med-and-down">
                 <li><a href="">About</a></li>
                 <li><a href="">Contact</a></li>
@@ -27,10 +24,6 @@
     </header>
     <main class="container">
       <div class="row">
-      <div class="teamText1"></div>
-      <div class="teamText2"></div>
-      </div>
-      <div class="row">
         <div class="col m2"></div>
         <h1 class="col m10 hero-label">Ruin your rival's day:</h1>
       </div>
@@ -41,11 +34,15 @@
             <div class="col m3"></div>
           </div>
           <div class="row">
-            <div class="col m4"></div>
-            <input type="submit" class="submit col m4 grey"></div>
+            <div class="col m4 inputButton"></div>
+            <button type="button" name="submit" class="submit col m4 grey">Submit</button></div>
             <div class="col m4"></div>
           </form>
-          <div class="row outputPlayer">
+          <div class="row">
+          <div class="teamText1"></div>
+          </div>
+          <div class="row">
+            <div class="outputPlayer"></div>
           </div>
       </div>
     </main>
