@@ -211,3 +211,7 @@ form {
 .player_name {
 	font-family:
 }
+
+.details {
+	cursor: pointer;
+}

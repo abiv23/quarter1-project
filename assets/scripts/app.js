@@ -8,6 +8,7 @@ function submitButtonClicked(event) {
     var Team = $('.teamText1')
     Team.append('<div class="col m6"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title scoreBoard1"><p>' + $('.team').val().toUpperCase() + ' Team Crimes: </p><span>');
     $.get("http://nflarrest.com/api/v1/team/search/?term=" + name, useLookUp)
+    $('.team').val('');
 }
 
 function useLookUp(data) {
@@ -23,24 +24,26 @@ function displayPlayers(data) {
     var playerText = $('.outputPlayer')
     playerText.append('<div class="col m4"></div><h5 class="col m5">Player Arrest Details: </h5></div>');
     for (var i = 0; i < data.length; i++) {
-        var Name = ('<div class="col m5"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title">' + data[i].Name + '</span><p class="player_name">Date: ' + data[i].Date + '</p><p>Charge: ' + data[i].Category + '</p><p class="truncate details">Details: ' + data[i].Description + '</p></div></div></div></div>')
+        var Name = ('<div class="col m5"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title">' + data[i].Name + '</span><p class="player_name">Date: ' + data[i].Date + '</p><p>Charge: ' + data[i].Category + '</p><p class="truncate details details' + [i] + '">Details: ' + data[i].Description + '</p></div></div></div></div>')
+        //issue below here with adding the click listener dynamically and then access it via the named function
         playerText.append(Name);
+        $('.details' + [i]).on('click', removeTruncate)
     }
     $('.hero-label').text('Compare to your Team');
     $('.team').attr("placeholder", "Enter your Favorite Team to see the Moral Scoreboard");
-    $('.truncate').on('click', truncateContent)
 }
 
-function truncateContent() {
-    $('.truncate').removeClass('truncate');
-    $('.truncate').off('click', truncateContent);
-    $('.details').on('click', addTruncate);
+function removeTruncate() {
+  console.log(this);
+    $(this).removeClass('truncate');
+    $(this).off('click', removeTruncate);
+    $(this).on('click', addTruncate);
 }
 
 function addTruncate() {
-    $('.details').addClass('truncate');
-    $('.details').off('click', addTruncate);
-    $('.details').on('click', truncateContent);
+    $(this).addClass('truncate');
+    $(this).off('click', addTruncate);
+    $(this).on('click', removeTruncate);
 }
 
 function displayTeam(data) {
@@ -52,16 +55,18 @@ function displayTeam(data) {
 
 function compareClicked() {
     event.preventDefault();
-    console.log('second click listener working!');
     var name = $('.team').val();
     var Team = $('.teamText1')
-    Team.append('<div class="col m6"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title scoreBoard1"><p>' + $('.team').val().toUpperCase() + ' Team Crimes: </p><span>');
-    $.get('http://nflarrest.com/api/v1/team/search/?term=' + name, useLookUp);
+    Team.append('<div class="col m6"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title scoreBoard2"><p>' + $('.team').val().toUpperCase() + ' Team Crimes: </p><span>');
+    $.get('http://nflarrest.com/api/v1/team/search/?term=' + name, useLookUp2);
     $('button').off('click', compareClicked);
     $('button').html('Reset');
-    $('button').on('click', function() {
-        $('main').reset();
-    })
+    $('button').on('click', reset);
+    $('.team').val('');
+}
+
+function reset() {
+    window.location.reload(true);
 }
 
 function useLookUp2(data) {
