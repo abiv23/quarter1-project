@@ -10,7 +10,7 @@ function submitButtonClicked(event) {
     var name = $('.team').val()
     var Team = $('.teamText1')
     Team.append('<div class="col m6"><div class="card indigo darken-4"><div class="card-content white-text"><span class="card-title scoreBoard1"><p>' + $('.team').val().toUpperCase() + ' Team Crimes: </p><span>');
-    $.get("http://nflarrest.com/api/v1/team/search/?term=" + name, useLookUp)
+    $.get("https://galvanize-cors.herokuapp.com/http://nflarrest.com/api/v1/team/search/?term=" + name, useLookUp)
 }
 
 function useLookUp(data) {
@@ -21,8 +21,8 @@ function useLookUp(data) {
     $('form').submit(compareClicked);
     $('.team').val('');
     var codeLookUp = data[0].team_code;
-    $.get("http://nflarrest.com/api/v1/team/arrests/" + codeLookUp, displayPlayers)
-    $.get("http://nflarrest.com/api/v1/team/topCrimes/" + codeLookUp, displayTeam)
+    $.get("https://galvanize-cors.herokuapp.com/http://nflarrest.com/api/v1/team/arrests/" + codeLookUp, displayPlayers)
+    $.get("https://galvanize-cors.herokuapp.com/http://nflarrest.com/api/v1/team/topCrimes/" + codeLookUp, displayTeam)
 }
 
 function displayPlayers(data) {
@@ -63,7 +63,7 @@ function compareClicked() {
     var name = $('.team').val();
     var Team = $('.teamText1')
     Team.append('<div class="col m6"><div class="card indigo darken-4"><div class="card-content white-text"><span class="card-title scoreBoard2"><p>' + $('.team').val().toUpperCase() + ' Team Crimes: </p><span>');
-    $.get('http://nflarrest.com/api/v1/team/search/?term=' + name, useLookUp2);
+    $.get('https://galvanize-cors.herokuapp.com/http://nflarrest.com/api/v1/team/search/?term=' + name, useLookUp2);
     $('button').off('click', compareClicked);
     $('form').off('submit', compareClicked);
     $('button').html('Reset');
@@ -84,7 +84,7 @@ function reset() {
 
 function useLookUp2(data) {
     var codeLookUp = data[0].team_code;
-    $.get("http://nflarrest.com/api/v1/team/topCrimes/" + codeLookUp, displayTeam2)
+    $.get("https://galvanize-cors.herokuapp.com/http://nflarrest.com/api/v1/team/topCrimes/" + codeLookUp, displayTeam2)
 }
 
 function displayTeam2(data) {
@@ -101,7 +101,7 @@ function displayTeam2(data) {
 
 
 function displayScoreboard() {
-    $('.scoreboard').append('<div class="col m12"><div class="card indigo darken-4"><div class="card-content white-text"><span class="card-title moralScoreboard"><h4>You are Morally Supperior in the following areas:</h4><span>')
+    $('.scoreboard').append('<div class="col m12"><div class="card indigo darken-4"><div class="card-content white-text"><span class="card-title moralScoreboard"><h4>You are Morally Superior in the following areas:</h4><span>')
     for (var i = 0; i < team1.length; i++) {
       var $p = $('<p>' + team1[i][0] + '</p>')
       $('.moralScoreboard').append($p)
