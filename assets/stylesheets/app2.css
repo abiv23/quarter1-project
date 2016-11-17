@@ -8,34 +8,39 @@ body {
    flex: 1 0 auto;
  }
 
-.background-image img {
-  background-image: url('/assets/images/blowout2.jpg');
-  opacity: .3;
+nav {
+  background-color: #192F6B;
 }
 
-nav {
-  background-color: #43a047;
+.hero-label {
+  color: #b71c1c;
 }
 
 footer.page-footer {
-  background-color: #43a047;
+  background-color: #192F6B;
 }
 
 .footer-copyright div {
-  background-color: #43a047;
+  background-color: #192F6B;
 }
 
-h2 {
-  color: #B38707;
+input[type=text]:focus:not([readonly]) {
+ border-bottom: 2px solid red;
+ box-shadow: none;
 }
 
-h5 {
-  color: #B38707;
+
+nav .brand-logo {
+  color: #e0e0e0;
 }
 
-.scoreBoard {
+nav ul li a {
+  color: #e0e0e0;
+}
+
+/*.scoreBoard {
   width: 33%;
-}
+}*/
 
 .teamText1 {
   height: 1vh;
@@ -46,5 +51,5 @@ h5 {
 }
 
 .details:hover {
-  background-color: lightgrey;
+  text-decoration: underline;
 }
