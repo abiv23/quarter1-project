@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('form').submit(submitButtonClicked);
     $('button').click(submitButtonClicked);
 })
 var team1 = []
@@ -14,8 +15,10 @@ function submitButtonClicked(event) {
 
 function useLookUp(data) {
     $('button').off('click', submitButtonClicked);
+    $('form').off('submit', submitButtonClicked);
     $('button').html('Compare Teams');
     $('button').on('click', compareClicked);
+    $('form').submit(compareClicked);
     $('.team').val('');
     var codeLookUp = data[0].team_code;
     $.get("http://nflarrest.com/api/v1/team/arrests/" + codeLookUp, displayPlayers)
@@ -62,17 +65,18 @@ function compareClicked() {
     Team.append('<div class="col m6"><div class="card indigo darken-4"><div class="card-content white-text"><span class="card-title scoreBoard2"><p>' + $('.team').val().toUpperCase() + ' Team Crimes: </p><span>');
     $.get('http://nflarrest.com/api/v1/team/search/?term=' + name, useLookUp2);
     $('button').off('click', compareClicked);
+    $('form').off('submit', compareClicked);
     $('button').html('Reset');
     $('button').on('click', reset);
     $('.team').val('');
 }
 
-$(window).keydown(function (e) {
-  if (e.which == 13) {
-    event.preventDefault();
-    return false;
-  }
-});
+// $(window).keydown(function (e) {
+//   if (e.which == 13) {
+//     event.preventDefault();
+//     return false;
+//   }
+// });
 
 function reset() {
     window.location.reload(true);
