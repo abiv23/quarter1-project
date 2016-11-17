@@ -8,7 +8,7 @@ function submitButtonClicked(event) {
     event.preventDefault();
     var name = $('.team').val()
     var Team = $('.teamText1')
-    Team.append('<div class="col m6"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title scoreBoard1"><p>' + $('.team').val().toUpperCase() + ' Team Crimes: </p><span>');
+    Team.append('<div class="col m6"><div class="card teal"><div class="card-content white-text"><span class="card-title scoreBoard1"><p>' + $('.team').val().toUpperCase() + ' Team Crimes: </p><span>');
     $.get("http://nflarrest.com/api/v1/team/search/?term=" + name, useLookUp)
 }
 
@@ -27,7 +27,7 @@ function displayPlayers(data) {
     playerText.append('<div class="col m4"></div><h5 class="col m5" id="playerLink">Player Arrest Details: </h5></div>');
     $('.playerLink').append('<h6><a href="#playerLink">See Arrest Data by Player</a></h6>')
     for (var i = 0; i < data.length; i++) {
-        var Name = ('<div class="col m5"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title">' + data[i].Name + '</span><p class="player_name">Date: ' + data[i].Date + '</p><p>Charge: ' + data[i].Category + '</p><p class="truncate details details' + [i] + '">Details: ' + data[i].Description + '</p></div></div></div></div>')
+        var Name = ('<div class="col m6"><div class="card teal"><div class="card-content white-text"><span class="card-title">' + data[i].Name + '</span><p class="player_name">Date: ' + data[i].Date + '</p><p>Charge: ' + data[i].Category + '</p><p class="truncate details details' + [i] + '">Details: ' + data[i].Description + '</p></div></div></div></div>')
         playerText.append(Name);
         $('.details' + [i]).on('click', removeTruncate)
     }
@@ -59,7 +59,7 @@ function compareClicked() {
     event.preventDefault();
     var name = $('.team').val();
     var Team = $('.teamText1')
-    Team.append('<div class="col m6"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title scoreBoard2"><p>' + $('.team').val().toUpperCase() + ' Team Crimes: </p><span>');
+    Team.append('<div class="col m6"><div class="card teal"><div class="card-content white-text"><span class="card-title scoreBoard2"><p>' + $('.team').val().toUpperCase() + ' Team Crimes: </p><span>');
     $.get('http://nflarrest.com/api/v1/team/search/?term=' + name, useLookUp2);
     $('button').off('click', compareClicked);
     $('button').html('Reset');
@@ -90,12 +90,14 @@ function displayTeam2(data) {
 
 
 function displayScoreboard() {
-    $('.scoreboard').append('<div class="col m12"><div class="card blue-grey"><div class="card-content white-text"><span class="card-title moralScoreboard"><p>You are Morally Supperior in the following areas:</p><span>')
+    $('.scoreboard').append('<div class="col m12"><div class="card teal"><div class="card-content white-text"><span class="card-title moralScoreboard"><p>You are Morally Supperior in the following areas:</p><span>')
     for (var i = 0; i < team1.length; i++) {
+      var $p = $('<p>' + team1[i][0] + '</p>')
+      $('.moralScoreboard').append($p)
         for (var j = 0; j < team2.length; j++) {
             if (team1[i][0] === team2[j][0]) {
-                if (team1[i][1] > team2[j][1]) {
-                    $('.moralScoreboard').append('<p>' + team1[i][0] + '</p>')
+                if (team1[i][1] <= team2[j][1]) {
+                    $p.remove();
                 }
             }
         }
