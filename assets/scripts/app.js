@@ -2,6 +2,7 @@ $(document).ready(function() {
     $('form').submit(submitButtonClicked);
     $('button').click(submitButtonClicked);
 })
+
 var team1 = []
 var team2 = []
 
@@ -34,7 +35,7 @@ function displayPlayers(data) {
         playerText.append(Name);
         $('.details' + [i]).on('click', removeTruncate)
     }
-    $('.hero-label').text('Compare Teams');
+    $('.hero-label').text('Add an NFL Team to Compare');
     $('.team').attr("placeholder", "add your Favorite Team by Name or City...");
 }
 
@@ -71,13 +72,6 @@ function compareClicked() {
     $('.team').val('');
 }
 
-// $(window).keydown(function (e) {
-//   if (e.which == 13) {
-//     event.preventDefault();
-//     return false;
-//   }
-// });
-
 function reset() {
     window.location.reload(true);
 }
@@ -95,7 +89,6 @@ function displayTeam2(data) {
     }
     $('.hero-label').text('The Moral Scoreboard');
     $('.team').hide();
-    $('h6').hide();
     displayScoreboard();
 }
 
@@ -103,8 +96,8 @@ function displayTeam2(data) {
 function displayScoreboard() {
     $('.scoreboard').append('<div class="col m12"><div class="card indigo darken-4"><div class="card-content white-text"><span class="card-title moralScoreboard"><h4>You are Morally Superior in the following areas:</h4><span>')
     for (var i = 0; i < team1.length; i++) {
-      var $p = $('<p>' + team1[i][0] + '</p>')
-      $('.moralScoreboard').append($p)
+        var $p = $('<p>' + team1[i][0] + '</p>')
+        $('.moralScoreboard').append($p)
         for (var j = 0; j < team2.length; j++) {
             if (team1[i][0] === team2[j][0]) {
                 if (team1[i][1] <= team2[j][1]) {

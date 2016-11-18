@@ -1,217 +1,113 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
+/* Materialize imported */
+
+/*
+============================
+      GLOBAL OVERRIDES
+============================
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+
+html {
+    font-family: Trebuchet, serif;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+
 body {
-	line-height: 1;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/*
-============================================
-              Reset Overrides
-
-============================================
-*/
-
- /*img {
-   height: 100%;
-   width: 100%;
- }*/
-
-/*
-============================================
-              Nav
-
-============================================
-*/
-
-@font-face {
-	font-family: 'Conv_UNIVERSAL-COLLEGE';
-	src: url('fonts/UNIVERSAL-COLLEGE.eot');
-	src: local('☺'), url('fonts/UNIVERSAL-COLLEGE.woff') format('woff'), url('fonts/UNIVERSAL-COLLEGE.ttf') format('truetype'), url('fonts/UNIVERSAL-COLLEGE.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-.nav {
-  display: flex;
-  height: 40vh;
-  width: auto;
-  background-color: #002D55;
-}
-
-
-.nav a {
-  display: flex;
-  align-items: center;;
-  justify-content: flex-start;
-}
-
-.hero-image {
-  padding: 1em 0 1em 0;
-  border-radius: 10%;
-  border: 1px solid #F0EBD2;
-  margin: 1em 0;
-}
-
-.logo-text {
-  font-size: 2em;
-  color: #B38707;
-  text-shadow: .1em .1em black;
-  font-family: 'Conv_UNIVERSAL-COLLEGE';
-}
-
-.nav ul {
-  display: flex;
-  align-items: center;;
-  justify-content: flex-end;
-}
-
-.nav ul li {
-  padding: 1em 1.5em 1em 1.5em;
-  border: 1px solid #F0EBD2;
-  margin: 0 .5em;
-  box-shadow: 5px 4px 3px black;
-  border-radius: 15%;
-	font-size: 1em;
-}
-
-.nav ul li a {
-  color: #B38707
-}
-
-.nav ul li a:hover {
-	text-decoration: none;
-}
-
-/*
-============================================
-              Footer
-
-============================================
-*/
-
-.footer {
-  display: flex;
-  margin-bottom: 0;
-  width: auto;
-	height: 3vh;
-  background-color: #002D55;
-	padding-top: .2em;
-}
-
-.footer-link {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.copyright p {
-  color: #F0EBD2;
-  display: flex;
-  justify-content: flex-start;
-}
-
-/*
-============================================
-              Home
-
-============================================
-*/
 
 main {
-  height: 100%;
-  width: auto;
-  background-color: #F0EBD2;
+    flex: 1 0 auto;
 }
 
-form {
-  display: flex;
+
+/*
+============================
+        NAV
+============================
+*/
+
+nav {
+    background-color: #192F6B;
 }
 
-.input-form {
-  display: flex;
-  flex-direction: column;
-  padding: 10vh 0 0 0;
+nav .brand-logo {
+    color: #e0e0e0;
 }
+
+nav ul li a {
+    color: #e0e0e0;
+}
+
+/*
+============================
+        FOOTER
+============================
+*/
+
+footer.page-footer {
+    background-color: #192F6B;
+}
+
+.footer-copyright div {
+    background-color: #192F6B;
+}
+
+/*
+============================
+        HOME
+============================
+*/
 
 .hero-label {
-  display: flex;
-  align-self: center;
-  font-size: 2em;
-  padding: 1em 0;
-  color: #B38707;
+    color: #b71c1c;
+    padding: 12vh 0 0 0;
 }
 
-.hero-input {
-  margin: 0 10vw;
-  font-size: 2em;
+#playerLink {
+    color: #b71c1c;
 }
 
-/*.input-label {
-  display: flex;
-  align-self: center;
-}*/
-
-.submit {
-  display: flex;
-  align-self: flex-start;
-  width: 8vw;
-  margin: 1em 1em 25vh 8em;
-	background-color: #002D55;
-	color: #B38707;
-	padding: .25em 0 .25em 1.5em;
-	border: 1px solid #B38707;
+h4 {
+    color: #b71c1c;
 }
 
-.submit:hover {
-	background-color: grey;
+input[type=text]:focus:not([readonly]) {
+    border-bottom: 2px solid red;
+    box-shadow: none;
 }
 
-.player_name {
-	font-family:
+.teamText1 {
+    height: 1vh;
 }
 
 .details {
-	cursor: pointer;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.details:hover {
+  text-decoration: none;
+}
+
+/*
+============================
+        ABOUT
+============================
+*/
+
+.about-text {
+  padding: 5vh 10vw 5 10vw;
+  margin: 2vh 5vw 0 5vw;
+  font-size: 1.5em;
+}
+
+.about-label {
+  color: #b71c1c;
+  padding: 2vh 0 0 0;
+}
+
+.about-underlabel {
+  color: #b71c1c;
 }
